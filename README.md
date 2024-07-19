@@ -5,28 +5,16 @@
 
 ## 프로젝트 데모
 ### 첫번째: 어플 실행 및 랜덤 추천
-<video width="300" controls>
-  <source src="api/docs/첫번째.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/c0aed8c1-91fc-4d85-b3f8-7fd9e5f26db2
 
 ### 두번째: 랜덤 추천 모드에서 상세보기
-<video width="300" controls>
-  <source src="api/docs/두번째.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/3ec40434-8085-429c-8f14-bf0b99acf993
 
 ### 세번째: 회사 건물 내 랜덤 식당 추천
-<video width="300" controls>
-  <source src="api/docs/3번째.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/0732f59b-d57d-4bb0-9a71-7f1aa520b429
 
 ### 네번째: 날씨 기반 식당 추천
-<video width="300" controls>
-  <source src="api/docs/4번째.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/21a9d0d4-04b0-4ee7-ab4e-299d736f0b77
 
 ## 사용 기술
 - **이클립스 IDE**: JSP를 이용한 서버 사이드 렌더링
