@@ -67,8 +67,17 @@ docker buildx inspect --bootstrap
 # 멀티 플랫폼 빌드
 docker buildx build --platform linux/amd64,linux/arm64 -t [이미지명] .
 
+```
 
-<video width="300" controls>
-  <source src="api/docs/첫번째.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Docker 이미지 빌드 및 AWS ECR 업로드
+- **AWS ECR 업로드**: 도커 이미지를 빌드하고 AWS ECR에 업로드하여 다양한 플랫폼에서 사용할 수 있도록 설정하였습니다.
+
+### 배포 및 데이터베이스 마이그레이션
+- **ECS Fargate 배포**: ECR에 업로드된 이미지를 사용하여 AWS ECS Fargate에 배포하여 외부 접근이 가능하도록 설정했습니다.
+- **데이터베이스 마이그레이션**: 로컬에서 사용하던 MySQL 데이터베이스를 AWS RDS로 이전하였고, FastAPI 애플리케이션에서 RDS 데이터베이스와 연결하여 데이터를 관리합니다.
+
+## Swing2App
+웹뷰(WebView)를 이용하여 웹사이트를 모바일 앱으로 변환할 수 있는 기능을 제공합니다. 나는 스윙투앱으로 띄워놓은 서버를 APK로 빌드했습니다.
+
+**웹뷰 앱 제작**:
+    - 스윙투앱에서 지정한 웹사이트 URL을 입력하여 해당 사이트를 표시하는 웹뷰 앱을 생성하였습니다.
