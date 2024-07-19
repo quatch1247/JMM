@@ -1,0 +1,77 @@
+# Python specific
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# Token files
+token.json
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VSCode settings
+.vscode/
+*.code-workspace
+
+# PyCharm settings
+.idea/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+*.egg
+*.egg-info
+dist
+build
+pip-wheel-metadata
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+pytestdebug.log
+
+# Pyre type checker
+.pyre/
+
+# C extensions
+*.so
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# FastAPI specific
+*.log
+
+# Ignore all files in the docs directory
+docs/*
+
+# Eclipse specific
+.classpath
+.project
+.settings/
+pom.xml

@@ -1,0 +1,208 @@
+body {
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* 스크롤 방지 */
+}
+
+a {
+    color: #3498db; /* 파란색 */
+    text-decoration: none; /* 밑줄 제거 */
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* 최대 폭을 설정하여 중앙 정렬 */
+/*     margin-top: 20px; 카드가 더 아래에 위치하도록 마진 추가 */
+/*     flex-grow: 1; 컨테이너가 남은 공간을 차지하도록 설정 */
+}
+
+.menu-card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin: 20px;
+    overflow: hidden;
+    width: 100%; /* 기본적으로 화면의 100% 폭을 차지하도록 설정 */
+    max-width: 600px; /* 카드의 최대 폭을 설정 */
+    min-height: 400px; /* 카드의 최소 높이 설정 */
+    flex-grow: 1; /* 카드가 남은 공간을 차지하도록 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-image {
+    width: 100%; /* 부모 요소에 맞게 너비 조정 */
+    height: 200px; /* 고정 높이 */
+    object-fit: cover; /* 이미지가 비율을 유지하며 크롭됩니다 */
+    display: block; /* 이미지를 블록 요소로 설정하여 레이아웃 문제 해결 */
+    opacity: 1; /* 기본 투명도 설정 */
+    transition: opacity 0.3s ease-in-out; /* 투명도 전환 효과 */
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Galaxy S8+ */
+@media (max-width: 740px) and (min-height: 360px) {
+    .menu-image {
+        max-height: 200px; /* 갤럭시 S8+에서 이미지의 최대 높이 조정 */
+        object-fit: cover; /* 이미지가 비율을 유지하며 크롭됩니다 */
+    }
+}
+
+/* iPhone SE */
+@media (max-width: 375px) and (max-height: 667px) {
+    .menu-image {
+        max-height: 150px; /* 아이폰 SE에서 이미지의 최대 높이 조정 */
+        object-fit: cover; /* 이미지가 비율을 유지하며 크롭됩니다 */
+    }
+}
+
+/* Galaxy S20 Ultra */
+@media (max-width: 1440px) and (max-height: 3200px) {
+    .menu-image {
+        max-height: 300px; /* 갤럭시 S20 울트라에서 이미지의 최대 높이 조정 */
+        object-fit: cover; /* 이미지가 비율을 유지하며 크롭됩니다 */
+    }
+}
+
+.menu-content {
+    padding: 20px;
+    text-align: left;
+    background-color: #f8f9fa;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 컨텐츠를 위 아래로 정렬 */
+}
+
+.price-tag {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.menu-description {
+    font-size: 16px;
+    color: #666;
+}
+
+.refresh-button {
+/*     margin-top: 20px; 버튼과 카드 사이의 마진 추가 */
+    padding: 10px 20px; /* 좌우 패딩을 줄여서 버튼의 너비를 조절 */
+    font-size: 14px; /* 폰트 크기 줄이기 */
+    cursor: pointer;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block; /* 인라인 블록으로 변경하여 정렬 가능 */
+    flex-shrink: 0; /* 버튼이 줄어들지 않도록 설정 */
+}
+
+.refresh-button:hover,
+.refresh-button:active {
+    background-color: #0056b3; /* 마우스를 올리거나 클릭했을 때 배경 색 진하게 */
+    transform: scale(1.05); /* 약간 확대 */
+}
+
+.category-button {
+    width: 60px; /* 정사각형 버튼 */
+    height: 60px; /* 정사각형 버튼 */
+    font-size: 16px; /* 아이콘 크기 줄이기 */
+    cursor: pointer;
+    margin: 0 5px; /* 카드와 가로 간격 맞춤 */
+    border: none;
+    border-radius: 10px; /* 모서리가 둥근 사각형 */
+    background-color: transparent;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* 버튼이 줄어들지 않도록 설정 */
+}
+
+.category-button i {
+    font-size: 28px; /* 아이콘 크기 줄이기 */
+    font-weight: bold; /* 아이콘 굵기 증가 */
+}
+
+.category-button:hover, .category-button.active {
+    background-color: #007bff; /* 호버 및 활성화 상태 배경색 */
+    color: white; /* 호버 및 활성화 상태 아이콘 색상 */
+    transform: scale(1.1); /* 호버 및 활성화 상태 크기 증가 */
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; /* 작은 화면에서 버튼이 줄바꿈되도록 설정 */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px; /* 작은 화면에서 새로고침 버튼과 카드 사이에 여백 추가 */
+    flex-shrink: 0; /* 버튼 컨테이너가 줄어들지 않도록 설정 */
+}
+
+/* @media (max-width: 768px) {
+    .menu-card {
+        width: 90%; 작은 화면에서는 카드의 폭을 90%로 설정
+        min-height: 300px; 작은 화면에서 카드의 최소 높이 조정
+    }
+    .refresh-button {
+        width: 90%; 작은 화면에서는 새로고침 버튼의 폭을 90%로 설정
+        text-align: center; 버튼 텍스트 중앙 정렬
+    }
+    .category-button {
+        width: 50px; 작은 화면에서 버튼 크기 유지
+        height: 50px; 작은 화면에서 버튼 크기 유지
+        font-size: 14px; 아이콘 크기 유지
+    }
+    .category-button i {
+        font-size: 24px; 작은 화면에서 아이콘 크기 유지
+    }
+} */
+
+/* Galaxy S8+ */
+@media (max-width: 740px) and (min-height: 360px) {
+    .menu-card {
+        max-height: 430px; /* 갤럭시 S8+에서 카드의 최대 높이 조정 */
+    }
+}
+
+/* iPhone SE */
+@media (max-width: 375px) and (max-height: 667px) {
+    .menu-card {
+        max-height: 400px; /* 아이폰 SE에서 카드의 최대 높이 조정 */
+    }
+}
+
+/* Galaxy S20 Ultra */
+@media (max-width: 1440px) and (max-height: 3200px) {
+    .menu-card {
+        max-height: 500px; /* 갤럭시 S20 울트라에서 카드의 최대 높이 조정 */
+    }
+}
