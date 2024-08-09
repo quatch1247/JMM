@@ -26,7 +26,7 @@ def insert_image_if_not_exists(store_id, image_path):
         db.close()
 
 def main():
-    image_folder = '/Users/igeon/Desktop/Projects/JMM/img'
+    image_folder = '/Users/igeon/Desktop/Projects/JMM/api/img'
 
     for filename in os.listdir(image_folder):
         if filename.endswith(('.jpeg', '.jpg', '.png')):

@@ -21,7 +21,7 @@
             <button class="category-button" onclick="loadCategory('building', this)">
                 <i class="bi bi-building"></i>
             </button>
-            <button class="category-button active" onclick="loadCategory('weather'', this)">
+            <button class="category-button active" onclick="loadCategory('weather', this)">
                 <i class="bi bi-cloud-sun"></i>
             </button>
         </div>

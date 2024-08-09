@@ -40,6 +40,10 @@ def fetch_all_menus():
             if menu.store_id not in store_menus:
                 store_menus[menu.store_id] = []
             store_menus[menu.store_id].append(menu.menu)
+        
+        for store_id in store_menus:
+            random.shuffle(store_menus[store_id])
+            
         return store_menus
     finally:
         db.close()
@@ -52,7 +56,7 @@ def recommend_menu_based_on_weather():
     system_prompt = (
         "당신은 날씨에 따라 다양한 메뉴를 추천하는 메뉴 추천 전문가입니다.\n"
         "다음 로직에 따라 step-by-step으로 해당 메뉴를 가진 식당의 ID를 선택해주세요\n"
-        "1. 주어진 메뉴를 보고 날씨에 상관없이 음식을 랜덤으로 선택해주세요.\n"
+        "1. 주어진 메뉴를 보고 온도와 습도를 고려해서 음식을 랜덤으로 선택해주세요.\n"
         "2. 그 메뉴를 보유하고 있는 식당 ID와 선택한 이유를 현재 날씨와 연관지어서 논리적으로 설명해주세요.\n"
         "3. 응답 형식은 반드시 다음과 같습니다.\n"
         "주어지는 메뉴 형식 : 식당 ID : ['메뉴1', '메뉴2', '메뉴3', '메뉴4', '메뉴5', '메뉴6', '메뉴7'], \n"
