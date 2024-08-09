@@ -1,6 +1,19 @@
 ## 프로젝트 개요
 도렴빌딩 주변 점심 메뉴를 랜덤, 건물 내, 날씨 기반으로 추천하는 웹 애플리케이션입니다.
 
+## 프로젝트 데모
+### 첫번째: 어플 실행 및 랜덤 추천
+https://github.com/user-attachments/assets/c0aed8c1-91fc-4d85-b3f8-7fd9e5f26db2
+
+### 두번째: 랜덤 추천 모드에서 상세보기
+https://github.com/user-attachments/assets/3ec40434-8085-429c-8f14-bf0b99acf993
+
+### 세번째: 회사 건물 내 랜덤 식당 추천
+https://github.com/user-attachments/assets/0732f59b-d57d-4bb0-9a71-7f1aa520b429
+
+### 네번째: 날씨 기반 식당 추천
+https://github.com/user-attachments/assets/21a9d0d4-04b0-4ee7-ab4e-299d736f0b77
+
 ## 사용 기술
 - **이클립스 IDE**: JSP를 이용한 서버 사이드 렌더링
 - **Bootstrap**: UI 디자인
@@ -55,7 +68,6 @@ docker buildx inspect --bootstrap
 docker buildx build --platform linux/amd64,linux/arm64 -t [이미지명] .
 
 ```
-
 ### Docker 이미지 빌드 및 AWS ECR 업로드
 - **AWS ECR 업로드**: 도커 이미지를 빌드하고 AWS ECR에 업로드하여 다양한 플랫폼에서 사용할 수 있도록 설정하였습니다.
 
@@ -70,7 +82,15 @@ docker buildx build --platform linux/amd64,linux/arm64 -t [이미지명] .
 1. **웹뷰 앱 제작**:
     - 스윙투앱에서는 사용자가 지정한 웹사이트 URL을 입력하면 해당 사이트를 표시하는 웹뷰 앱을 생성할 수 있습니다. 이를 통해 네이티브 앱처럼 작동하는 모바일 앱을 쉽게 만들 수 있습니다.
 
-<video width="300" controls>
-  <source src="api/docs/첫번째.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Docker 이미지 빌드 및 AWS ECR 업로드
+- **AWS ECR 업로드**: 도커 이미지를 빌드하고 AWS ECR에 업로드하여 다양한 플랫폼에서 사용할 수 있도록 설정하였습니다.
+
+### 배포 및 데이터베이스 마이그레이션
+- **ECS Fargate 배포**: ECR에 업로드된 이미지를 사용하여 AWS ECS Fargate에 배포하여 외부 접근이 가능하도록 설정했습니다.
+- **데이터베이스 마이그레이션**: 로컬에서 사용하던 MySQL 데이터베이스를 AWS RDS로 이전하였고, FastAPI 애플리케이션에서 RDS 데이터베이스와 연결하여 데이터를 관리합니다.
+
+## Swing2App
+웹뷰(WebView)를 이용하여 웹사이트를 모바일 앱으로 변환할 수 있는 기능을 제공합니다. 나는 스윙투앱으로 띄워놓은 서버를 APK로 빌드했습니다.
+
+**웹뷰 앱 제작**:
+    - 스윙투앱에서 지정한 웹사이트 URL을 입력하여 해당 사이트를 표시하는 웹뷰 앱을 생성하였습니다.
